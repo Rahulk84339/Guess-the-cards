@@ -71,9 +71,6 @@ for(let i=cards.length-1;i>=0;i--){
 
 let cardsCopy=cards;
 
-
-
-
 function displayCards(data){
 
     let cardsString="";
@@ -89,8 +86,8 @@ function displayCards(data){
 
     document.getElementById('cards').innerHTML=cardsString;
 
+    document.getElementById('cards').style.transition="1s";
 }
-
 
 
 displayCards(cards);
@@ -122,7 +119,9 @@ function openCards(index){
             cardCount=1;
         }
         else{
-            alert("GAME OVER");
+            cards[index].status="closed";
+        }
+        if(score==5){
             location.reload();
         }
 
